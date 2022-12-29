@@ -38,4 +38,12 @@ class Templates
         name = "A3 FIA Example";
         file = "Example_Reb_FIA";
     };
+
+    class Example_Civ : Example_Base
+    {
+        side = "Civ";
+        flagTexture = "\A3\Data_F\Flags\Flag_AAF_CO.paa";
+        name = "A3 Civ Example";
+        file = "Example_Civ";
+    };
 };

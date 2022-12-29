@@ -15,7 +15,4 @@ class cfgPatches
 	};
 };
 
-class A3A
-{
-    #include "templates.hpp" // no need to do ultimate_core\templates.hpp
-};
+#include "cfgTemplates.hpp"
