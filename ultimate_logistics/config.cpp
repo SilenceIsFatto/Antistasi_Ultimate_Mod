@@ -11,7 +11,7 @@ class cfgPatches
 			""
 		};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"A3_Data_F_AoW_Loadorder", "A3A_Logistics"}; // make sure it loads after default antistasi
+		requiredAddons[] = {"A3_Data_F_AoW_Loadorder"}; // make sure it loads after default antistasi
 	};
 };
 

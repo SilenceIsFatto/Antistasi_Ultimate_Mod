@@ -7,50 +7,53 @@
 //////////////////////////
 
 ["vehiclesCivCar", [
-    "C_Quadbike_01_F", 0.3
-    ,"C_Hatchback_01_F", 2.0
-    ,"C_Hatchback_01_sport_F", 0.3
-    ,"C_Offroad_01_F", 2.0
-    ,"C_SUV_01_F", 1.0
-    ,"C_Van_02_vehicle_F", 1.0                // van from Orange
-    ,"C_Van_02_transport_F", 0.2            // minibus
-    ,"C_Offroad_02_unarmed_F", 0.5            // Apex 4WD
-    ,"C_Offroad_01_comms_F", 0.1            // Contact
-    ,"C_Offroad_01_covered_F", 0.1]] call _fnc_saveToTemplate;
+    "CW_Quadbike", 0.3,
+    "C_Hatchback_01_F", 2.0,
+    "C_Hatchback_01_sport_F", 0.3,
+    "C_Offroad_01_F", 2.0,
+    "C_SUV_01_F", 1.0,
+    "C_Van_02_vehicle_F", 1.0,                // van from Orange
+    "C_Van_02_transport_F", 0.2,            // minibus
+    "C_Offroad_02_unarmed_F", 0.5,            // Apex 4WD
+    "C_Offroad_01_comms_F", 0.1,            // Contact
+    "C_Offroad_01_covered_F", 0.1
+]] call _fnc_saveToTemplate;
 
 ["vehiclesCivIndustrial", [
-    "C_Van_01_transport_F", 1.0
-    ,"C_Van_01_box_F", 0.8
-    ,"C_Truck_02_transport_F", 0.5
-    ,"C_Truck_02_covered_F", 0.5
-    ,"C_Tractor_01_F", 0.3    ]] call _fnc_saveToTemplate;
+    "C_Van_01_transport_F", 1.0,
+    "C_Van_01_box_F", 0.8,
+    "C_Truck_02_transport_F", 0.5,
+    "C_Truck_02_covered_F", 0.5,
+    "C_Tractor_01_F", 0.3    
+]] call _fnc_saveToTemplate;
 
 ["vehiclesCivBoat", [
-    "C_Boat_Civil_01_rescue_F", 0.1            // motorboats
-    ,"C_Boat_Civil_01_police_F", 0.1
-    ,"C_Boat_Civil_01_F", 1.0
-    ,"C_Rubberboat", 1.0                    // rescue boat
-    ,"C_Boat_Transport_02_F", 1.0            // RHIB
-    ,"C_Scooter_Transport_01_F", 0.5]] call _fnc_saveToTemplate;
+    "C_Boat_Civil_01_rescue_F", 0.1,            // motorboats
+    "C_Boat_Civil_01_police_F", 0.1,
+    "C_Boat_Civil_01_F", 1.0,
+    "C_Rubberboat", 1.0,                    // rescue boat
+    "C_Boat_Transport_02_F", 1.0,            // RHIB
+    "C_Scooter_Transport_01_F", 0.5
+]] call _fnc_saveToTemplate;
 
 ["vehiclesCivRepair", [
-    "C_Offroad_01_repair_F", 0.3
-    ,"C_Van_02_service_F", 0.3                // orange
-    ,"C_Truck_02_box_F", 0.1]] call _fnc_saveToTemplate;
+    "C_Offroad_01_repair_F", 0.3,
+    "C_Van_02_service_F", 0.3,                // orange
+    "C_Truck_02_box_F", 0.1
+]] call _fnc_saveToTemplate;
 
 ["vehiclesCivMedical", ["C_Van_02_medevac_F", 0.1]] call _fnc_saveToTemplate;
 
 ["vehiclesCivFuel", [
-    "C_Van_01_fuel_F", 0.2
-    ,"C_Truck_02_fuel_F", 0.1]] call _fnc_saveToTemplate;
+    "C_Van_01_fuel_F", 0.2,
+    "C_Truck_02_fuel_F", 0.1
+]] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///
 /////////////////////
 
-["faces", ["GreekHead_A3_02", "GreekHead_A3_03", "GreekHead_A3_04", "GreekHead_A3_05", "GreekHead_A3_06",
-"GreekHead_A3_07", "GreekHead_A3_08", "GreekHead_A3_09", "Ioannou", "Barklem", "AfricanHead_02",
-"AsianHead_A3_02", "AsianHead_A3_03", "WhiteHead_05"]] call _fnc_saveToTemplate;
+["faces", ["ls_chiss_male1_blue", "ls_chiss_male2_blue", "ls_mirialan_male1_sand", "ls_mirialan_male2_sand", "ls_zeltron_male1_crimson", "ls_zeltron_male2_crimson"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
@@ -92,12 +95,12 @@ private _civUniforms = [
 private _pressUniforms = [
     "U_C_Journalist",
     "U_Marshal"
-    ];
+];
 
 private _workerUniforms = [
     "U_C_WorkerCoveralls",
     "U_C_Uniform_Farmer_01_F"
-    ];
+];
 
 private _dlcUniforms = [];
 

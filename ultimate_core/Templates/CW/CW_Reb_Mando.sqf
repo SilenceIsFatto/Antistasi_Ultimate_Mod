@@ -43,33 +43,44 @@
 //  Rebel Starting Gear  //
 ///////////////////////////
 
-private _initialRebelEquipment = [
-    "SWLW_Westar35SA",
-    "SWLW_westar35c","SWLW_Westar35S",
-    "ls_weapon_rps6_disposable",
-    "SWLW_Westar35S_Mag","SWLW_westar35c_Mag","SWLW_westar35sa_Mag","ls_mag_rpg_1rnd","3AS_ThermalDetonator","SmokeShell",
-    "ls_mandalorian_standard_backpack","ls_mandalorian_light_backpack","ls_mandalorian_demo_backpack","ls_mandalorian_heavy_backpack","ls_mandalorian_medic_backpack",
-    "ls_mandalorian_traditional_vest",
+private _rebHeadgear = [
     "ls_mandalorian_traditional_helmet",
+    "ls_mandalorian_armorer_helmet",
+    "ls_mandalorian_elite_helmet",
+    "ls_mandalorian_executioner_helmet",
+    "ls_mandalorian_nightowl_helmet",
+    "ls_mandalorian_stalker_helmet"
+];
+
+private _initialRebelEquipment = [
+    "SWLW_Westar35SA","rhs_weap_tt33","SWLW_westar35c","SWLW_Westar35S",
+    ["ls_weapon_rps6_disposable", 50],
+    ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
+    "SWLW_Westar35S_Mag","SWLW_westar35c_Mag","SWLW_westar35sa_Mag","3AS_ThermalDetonator",
+    "ls_mandalorian_standard_backpack","ls_mandalorian_light_backpack","ls_mandalorian_demo_backpack","ls_mandalorian_heavy_backpack","ls_mandalorian_medic_backpack",
+    "ls_mandalorian_traditional_vest","SWLB_clone_officer_armor",
     "SWLB_clone_commander_binocular_night"
 ];
-["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","SWLB_comlink_hush98","tf_anprc154"]};
 if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment pushBack "ls_mandalorian_tro_backpack"};
 if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","JLTS_clone_comlink","TFAR_anprc154"]};
 if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment pushBack "JLTS_Clone_ARC_backpack"};
-["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
     "ls_mandalorian_undersuit_uniform"
 ];
 
+if (call A3U_fnc_allowDroidEquipment) then {
+    _rebUniforms append ["ultimate_assets_sw_droid_mando_uniform"];
+    _rebHeadgear append ["ultimate_assets_sw_droid_mando_helmet"];
+};
+
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;
 
-["headgear", [
-    "ls_mandalorian_traditional_helmet"
-]] call _fnc_saveToTemplate;
+["headgear", _rebHeadgear] call _fnc_saveToTemplate;
+
+["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 /////////////////////
 ///  Identities   ///
@@ -88,13 +99,13 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
-_loadoutData set ["binoculars", ["Binocular"]];
+_loadoutData set ["binoculars", ["JLTS_CloneBinocular_black"]];
 
 _loadoutData set ["uniforms", _rebUniforms];
 
-_loadoutData set ["glasses", ["G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red", "G_Squares", "G_Squares_Tinted"]];
-_loadoutData set ["goggles", ["G_Lowprofile"]];
-_loadoutData set ["facemask", ["G_Bandanna_blk", "G_Bandanna_oli", "G_Bandanna_khk", "G_Bandanna_tan", "G_Bandanna_beast", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_aviator"]];
+_loadoutData set ["glasses", []];
+_loadoutData set ["goggles", []];
+_loadoutData set ["facemask", []];
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];
